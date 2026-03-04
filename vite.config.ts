@@ -7,7 +7,7 @@ export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
     // This MUST match your repository name exactly
-    base: '/PortfolioClaire-main/', 
+    base: '/portfolioClaire/',
     
     plugins: [react(), tailwindcss()],
     define: {
