@@ -1,7 +1,6 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
-import { PhotoOrderEditor } from './components/PhotoOrderEditor.tsx';
 import './index.css';
 
 // Self-hosted fonts (eliminates Google Fonts render-blocking request)
@@ -16,10 +15,8 @@ import '@fontsource/courier-prime/700.css';
 import '@fontsource/courier-prime/400-italic.css';
 import '@fontsource/courier-prime/700-italic.css';
 
-const isEditor = new URLSearchParams(window.location.search).has('editor');
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {isEditor ? <PhotoOrderEditor /> : <App />}
+    <App />
   </StrictMode>,
 );
