@@ -33,7 +33,6 @@ export const Footer = ({ t, onCvOpen, onImageClick }: FooterProps) => {
 
           {/* Contact */}
           <div className="space-y-8">
-            <h2 className="text-6xl font-display uppercase">{t.theEnd}</h2>
             <p className="opacity-40 max-w-xs font-mono text-xs">
               // {t.status} <br />
               // {t.location}
