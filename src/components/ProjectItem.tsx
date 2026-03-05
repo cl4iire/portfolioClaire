@@ -131,7 +131,7 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
 
             <div>
               <span className="font-bold block mb-1 uppercase text-[10px] tracking-tighter opacity-40">{t.action}</span>
-              <p>{project.description[lang]}</p>
+              <p className="text-justify">{project.description[lang]}</p>
             </div>
             
           </div>

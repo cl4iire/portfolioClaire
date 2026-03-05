@@ -75,7 +75,7 @@ export const Hero = ({ backgroundY, t }: HeroProps) => {
             
             <div className="md:col-span-2">
               <div 
-                className="text-xs md:text-sm leading-relaxed opacity-70 font-mono"
+                className="text-xs md:text-sm leading-relaxed opacity-70 font-mono text-justify"
                 dangerouslySetInnerHTML={{ __html: t.bio }}
               />
 

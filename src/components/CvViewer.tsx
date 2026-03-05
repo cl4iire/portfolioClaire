@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { X } from "lucide-react";
-import cvFr from "../assets/CV/B.Laborde Claire CV 2025 2026.pdf?url";
-import cvEn from "../assets/CV/B.Laborde Claire CV 2025 2026 ANGLAIS.pdf?url";
+import cvFr from "../assets/CV/B.Laborde Claire FR  CV 2025 2026.pdf?url";
+import cvEn from "../assets/CV/B.Laborde Claire ENG CV 2025 2026.pdf?url";
 
 interface CvViewerProps {
   lang: 'FR' | 'ENG';

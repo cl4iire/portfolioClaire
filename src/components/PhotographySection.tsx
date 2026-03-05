@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
+import { ArrowRight } from "lucide-react";
 import { LazyImage } from "./LazyImage";
 
 interface PhotographySectionProps {
-  albums: { id: string; title: { FR: string; ENG: string }; description?: { FR: string; ENG: string }; items: { title: string; desc: string; url: string }[] }[];
+  albums: { id: string; title: { FR: string; ENG: string }; description?: { FR: string; ENG: string }; items: { title: string; desc: string; url: string }[]; articleImages?: string[] }[];
   t: any;
   onImageClick: (images: string[], index: number) => void;
   lang: 'FR' | 'ENG';
@@ -21,10 +22,26 @@ export const PhotographySection = ({ albums, t, onImageClick, lang }: Photograph
 
         {albums.map((album) => (
           <div className="mb-24" key={album.id}>
-            <h3 className="text-xs uppercase tracking-[0.3em] mb-2 opacity-60 border-l-2 border-accent pl-4">{album.title[lang]}</h3>
-            {album.description?.[lang] && (
-              <p className="text-[10px] opacity-50 mb-6 pl-4">{album.description[lang]}</p>
-            )}
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-3 mb-6">
+              <div>
+                <h3 className="text-xs uppercase tracking-[0.3em] mb-2 opacity-60 border-l-2 border-accent pl-4">{album.title[lang]}</h3>
+                {album.description?.[lang] && (
+                  <p className="text-[10px] opacity-50 pl-4 text-justify">{album.description[lang]}</p>
+                )}
+              </div>
+              {album.articleImages?.length ? (
+                <motion.button
+                  whileHover={{ x: 10 }}
+                  onClick={() => onImageClick(album.articleImages!, 0)}
+                  className="flex flex-col items-start gap-1 group cursor-pointer"
+                >
+                  <span className="flex items-center gap-4 text-xs uppercase tracking-widest font-bold">
+                    [ {t.seeArticle} ] <ArrowRight size={16} className="group-hover:text-accent transition-colors" />
+                  </span>
+                  <span className="text-[10px] opacity-40 uppercase tracking-widest font-mono">Blues Magazine 2025</span>
+                </motion.button>
+              ) : null}
+            </div>
             <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
               {album.items.map((photo, i) => (
                 <PhotoItem

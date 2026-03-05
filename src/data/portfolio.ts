@@ -11,6 +11,12 @@ const motorAndBluesModules = import.meta.glob(
   { eager: true, import: 'default' }
 ) as Record<string, string>;
 
+const motorArticleModules = import.meta.glob(
+  '/src/assets/projects/photographies/motors_and_blues/article/*.{png,PNG,jpg,JPG,jpeg,JPEG,webp,WEBP}',
+  { eager: true, import: 'default' }
+) as Record<string, string>;
+const motorArticleImages: string[] = Object.values(motorArticleModules);
+
 const voyagesModules = import.meta.glob(
   '/src/assets/projects/photographies/voyages/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,webp,WEBP}',
   { eager: true, import: 'default' }
@@ -77,6 +83,7 @@ export const TRANSLATIONS = {
     extScene: "EXT. SCÈNE",
     day: "JOUR",
     behindTheScenes: "Coulisses",
+    seeArticle: "Voir l'article",
     teachingsList: [
       "Écriture pour le Cinéma et la TV",
       "Studio de production TV",
@@ -134,6 +141,7 @@ export const TRANSLATIONS = {
     extScene: "EXT. SCENE",
     day: "DAY",
     behindTheScenes: "Behind the Scenes",
+    seeArticle: "See the article",
     teachingsList: [
       "Screenwriting for Film and TV",
       "TV Studio Production",
@@ -169,7 +177,7 @@ export const PHOTOGRAPHY = {
 
 // Auto-generate photography albums grouped by leaf folder under `photographies/`
 type PhotoItem = { title: string; desc: string; url: string; srcPath: string };
-export type PhotoAlbum = { id: string; title: LocaleText; description?: LocaleText; items: PhotoItem[] };
+export type PhotoAlbum = { id: string; title: LocaleText; description?: LocaleText; items: PhotoItem[]; articleImages?: string[] };
 
 // Extract the order-array key from a photo's original source path
 function orderKey(albumId: string, srcPath: string): string {
@@ -216,6 +224,7 @@ function prettifyFolderName(id: string) {
 
 const albumMap = new Map<string, PhotoAlbum>();
 Object.entries(allPhotoModules).forEach(([path, url]) => {
+  if (path.includes('/article/')) return; // article images handled separately
   const parts = path.split('/');
   const leafFolder = parts[parts.length - 2] || 'photos';
   const parentFolder = parts[parts.length - 3] || '';
@@ -246,7 +255,8 @@ Object.entries(allPhotoModules).forEach(([path, url]) => {
 
 export const PHOTOGRAPHY_ALBUMS: PhotoAlbum[] = Array.from(albumMap.values()).map(a => ({
   ...a,
-  items: applyOrder(a.id, a.items, META_BY_ID[a.id]?.order)
+  items: applyOrder(a.id, a.items, META_BY_ID[a.id]?.order),
+  ...(a.id === 'motors_and_blues' && motorArticleImages.length ? { articleImages: motorArticleImages } : {})
 })).sort((a, b) => {
   if (a.id === 'motors_and_blues') return -1;
   if (b.id === 'motors_and_blues') return 1;
