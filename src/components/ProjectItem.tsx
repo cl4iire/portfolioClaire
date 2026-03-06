@@ -82,7 +82,7 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
         <div className="lg:hidden">
           <div
             className="relative overflow-hidden bg-bg"
-            style={{ transform: '(-1deg)', aspectRatio: '16/9' }}
+            style={{ aspectRatio: '16/9' }}
           >
             {embedUrl && videoId ? (
               <YouTubeFacade embedUrl={embedUrl} videoId={videoId} title={project.title} />
@@ -166,7 +166,7 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
         <div className="hidden lg:block">
           <div
             className="relative overflow-hidden bg-bg"
-            style={{ transform: '(-1deg)', aspectRatio: '16/9' }}
+            style={{ aspectRatio: '16/9' }}
           >
             {embedUrl && videoId ? (
               <YouTubeFacade embedUrl={embedUrl} videoId={videoId} title={project.title} />
@@ -193,10 +193,9 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
         {/* Other Photos - Always here (Bottom on mobile) */}
         <div className="grid grid-cols-2 gap-8">
           {otherImages.map((img: string, i: number) => (
-            <div 
-              key={i} 
-              className="relative  cursor-pointer col-span-1"
-              style={{ transform: `(${i % 2 === 0 ? 1 : -1}deg)` }}
+            <div
+              key={i}
+              className="relative cursor-pointer col-span-1"
               onClick={() => onImageClick(project.images, embedUrl ? i : i + 1)}
             >
               <LazyImage
@@ -227,10 +226,9 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
           {showBTS && (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {project.behindTheScenes.map((img: string, i: number) => (
-                <div 
+                <div
                   key={i}
-                  className="relative  cursor-pointer"
-                  style={{ transform: `(${i % 2 === 0 ? 1 : -1}deg)` }}
+                  className="relative cursor-pointer"
                   onClick={() => onImageClick(project.behindTheScenes, i)}
                 >
                   <LazyImage
