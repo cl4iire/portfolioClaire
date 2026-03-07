@@ -24,11 +24,11 @@ const project: ProjectData = {
   producer: 'Claire Buhaceanu Laborde',
   videoUrl: 'https://youtu.be/VAf2H05Xocw?si=cwKHnsdAekn7aYZe',
   role: {
-    FR: 'Ecriture, Directeur, Photographie, Editeur',
+    FR: 'Scénariste, Directrice, Photographe, Co-éditrice [Première Pro]',
     ENG: 'Writing, Director, Photography, Editor',
   },
   description: {
-    FR: "Le court-métrage, réalisé en prises de vues réelles et en animation stop-motion, s'inscrit dans le thème imposé \"Dans l'œil du cyclone\" pour le concours Logo Un'Anime. Une femme soumise à un régime totalitaire où les femmes sont catégorisées et soumises, découvre un jour une curieuse boîte dans laquelle se trouvent des affaires d'une jeune fille.",
+    FR: "Ce court-métrage, réalisé en prises de vues réelles et en animation stop motion, s'inscrit dans le thème imposé, 'Dans l'œil du cyclone' pour le concours Logo Un'Animé. Dans un régime totalitaire où les femmes sont catégorisées et soumises, une jeune femme  découvre un jour, une curieuse boîte dans laquelle se trouvent les affaires personnelles d'une jeune fille d’un autre temps.",
     ENG: 'This short film, made in live-action and stop-motion animation, fits the theme "In the eye of the storm" for the Logo Un\'Anime competition. A woman subjected to a totalitarian regime discovers a curious box.',
   },
   images,
