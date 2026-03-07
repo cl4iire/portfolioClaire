@@ -22,11 +22,11 @@ export const Hero = ({ backgroundY, t }: HeroProps) => {
     <section id="hero" className="relative min-h-screen flex flex-col bg-bg text-title overflow-hidden">
       
       {/* Moitié Supérieure - Fond et Titre */}
-      <div className="h-[50vh] w-full relative overflow-hidden shrink-0">
+      <div className="h-[50vh] w-full relative overflow-hidden ">
         <motion.img
           style={{ y: backgroundY }}
           src={backgroundHero}
-          className="w-full h-[120%] object-cover object-bottom opacity-50"
+          className="w-full h-[120%] object-cover object-bottom "
           alt="Hero background"
           referrerPolicy="no-referrer"
           fetchPriority="high"
@@ -39,9 +39,11 @@ export const Hero = ({ backgroundY, t }: HeroProps) => {
           <motion.h1 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-3xl md:text-6xl font-display leading-none uppercase tracking-tighter"
+            className="text-3xl md:text-4xl font-display leading-none uppercase tracking-tighter"
           >
-            Claire Buhaceanu <br /> Laborde
+           
+            <span className="text-5xl md:text-7xl">PORTFOLIO</span><br/>
+            <span className="text-xl md:text-3xl">Claire Buhaceanu Laborde</span>
           </motion.h1>
         </div>
       </div>
