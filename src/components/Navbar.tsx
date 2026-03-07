@@ -39,7 +39,7 @@ export const Navbar = ({
           className="text-2xl font-bold tracking-tighter text-title"
         >
           <a href="#hero" className="hover:text-title transition-colors cursor-pointer" aria-label="Go to top / hero">
-            CLAIRE B.L.
+            CLAIRE B.L
           </a>
         </motion.div>
         

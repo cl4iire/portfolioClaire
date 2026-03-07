@@ -112,7 +112,7 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
           <div className="space-y-6 text-sm leading-relaxed">
             <div>
               <span className="font-bold block mb-1 uppercase text-[10px] tracking-tighter opacity-40">{t.roles}</span>
-              <p className="red-scribble inline">{project.role[lang]}</p>
+              <p className="">{project.role[lang]}</p>
             </div>
             
             {project.duration && (
