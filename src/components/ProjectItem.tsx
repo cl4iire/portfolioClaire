@@ -224,18 +224,19 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
             {t.behindTheScenes}
           </button>
           {showBTS && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            /* UPDATED SECTION: Masonry layout with Max-Height constraint */
+            <div className="columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
               {project.behindTheScenes.map((img: string, i: number) => (
                 <div
                   key={i}
-                  className="relative cursor-pointer"
+                  className="relative cursor-pointer break-inside-avoid overflow-hidden"
                   onClick={() => onImageClick(project.behindTheScenes, i)}
                 >
                   <LazyImage
                     src={img}
                     className="w-full"
-                    imgClassName="hover:grayscale-0"
-                    naturalHeight
+                    /* Added max-h-[450px] and object-cover to prevent portrait images from hanging too far down */
+                    imgClassName="w-full h-auto max-h-[450px] object-cover hover:grayscale-0"
                     alt={`${project.title} BTS ${i}`}
                   />
                 </div>
@@ -244,6 +245,7 @@ export const ProjectItem = ({ project, idx, t, lang, onImageClick }: ProjectItem
           )}
         </div>
       )}
+      
       {/* Documentation PDF Modal */}
       {showDoc && project.documentationUrl && (
         <motion.div
