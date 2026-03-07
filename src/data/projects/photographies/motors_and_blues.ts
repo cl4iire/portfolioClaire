@@ -2,10 +2,10 @@ import type { PhotoAlbumMeta } from '../../types';
 
 const meta: PhotoAlbumMeta = {
   id: 'motors_and_blues',
-  title: { FR: 'Motor & Blues', ENG: 'Motor & Blues' },
+  title: { FR: 'Motors & Blues', ENG: 'Motors & Blues' },
   description: {
-    FR: 'Instantanés de mécanique et de musique — textures, métal et scènes.',
-    ENG: 'Snapshots of mechanics and music — textures, metal, and stages.',
+    FR: 'Photographe du festival pour alimenter les réseaux sociaux et autrice d’un article  pour le Blues Magazine d’octobre 2025.',
+    ENG: 'Festival photographer for the social media content and author of an article forthe October 2025 Blues Magazine..',
   },
     order: [
     '1.webp',

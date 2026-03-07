@@ -26,11 +26,11 @@ const project: ProjectData = {
   producer: 'Janine Hemker',
   videoUrl: 'https://youtu.be/zKjolkqnnho?si=ysaE6niS-IOdtrPw',
   role: {
-    FR: '1er assistant caméra - Black Magic Pocket Cinema, Photographe, Editeur - Première Pro',
-    ENG: '1st Assistant Camera - Black Magic Pocket Cinema, Photographer, Editor - Premiere Pro',
+    FR: '1ère assistante caméra [Blackmagic Cinema], Photographe, Editrice [Première Pro]',
+    ENG: '1st Assistant Camera - Black Magic Pocket Cinema, Photographer, Editor - [Première Pro]',
   },
   description: {
-    FR: "Une étudiante doit faire face aux fantomes de son passé et à sa culpabilité lors d'une session d'étude.",
+    FR: "Une étudiante doit faire face aux fantômes de son passé et à sa culpabilité lors d'une session d'étude.",
     ENG: 'A student must face the ghosts of her past and her guilt during a study session.',
   },
   images: images,

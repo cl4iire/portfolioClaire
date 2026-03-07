@@ -18,11 +18,11 @@ const project: ProjectData = {
   producer: 'Claire Buhaceanu Laborde',
   videoUrl: 'https://youtu.be/GpzJsAe2mu8?si=1exsgXpzuvzFOSYl',
   role: {
-    FR: 'Ecriture, Production, Editeur',
+    FR: 'Scénariste, Productrice, Editrice [Première Pro]',
     ENG: 'Writing, Production, Editor',
   },
   description: {
-    FR: 'Documentaire de 3 minutes réalisé dans le cadre d\'un concours avec pour thème "Around Me, in the Here and Now". Les fetes sont un moment de partages, de retrouvailles malgré la situation mondiale.',
+    FR: 'Documentaire de 3 minutes réalisé dans le cadre d\'un concours avec pour thème "Around Me, in the Here and Now". Les fêtes sont un moment de partage et de retrouvailles malgré la situation mondiale.',
     ENG: '3-minute documentary made for a competition themed "Around Me, in the Here and Now". The holidays are a time for sharing and reuniting despite the global situation.',
   },
   images: images.length > 0 ? images : [
